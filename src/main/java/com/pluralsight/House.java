@@ -26,28 +26,31 @@ public class House extends Asset{
     public BigDecimal getValue() {
         BigDecimal price= BigDecimal.valueOf((squareFoot*condition)+(0.25*lotSize));
         //will I need a switch so that I can make it so condition 1 "excellent"
+        // will correspond to the dollar value(180)?
+        //should condition be an int or string like "good"?
         switch (condition){
             case 1: {
-                price = new BigDecimal(180.00);
+                price =BigDecimal.valueOf((squareFoot*180)+(0.25*lotSize));
                 System.out.println("excellent");
-            }
+            } break;
             case 2: {
-                price = new BigDecimal(130.00);
+                price = BigDecimal.valueOf((squareFoot*130)+(0.25*lotSize));
                 System.out.println("good");
-            }
+            } break;
             case 3: {
                 price = new BigDecimal(90.00);
                 System.out.println("fair");
-            }
+            } break;
             case 4: {
                 price = new BigDecimal(80.00);
                 System.out.println("poor");
-            }
+            } break;
             default:{
                 System.out.println("invalid condition");
             }
+
         }
-        // will correspond to the dollar value(180)?
+
         //should I do this logic in asset's getValue()?no bc then it would apply to every subclass
 //        setOriginalCost((squareFoot*condition)+(0.25*lotSize));
 //    setOriginalCost();
