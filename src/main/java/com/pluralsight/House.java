@@ -26,6 +26,17 @@ public class House extends Asset{
                 price = new BigDecimal(130.00);
                 System.out.println("good");
             }
+            case 3: {
+                price = new BigDecimal(90.00);
+                System.out.println("fair");
+            }
+            case 4: {
+                price = new BigDecimal(80.00);
+                System.out.println("poor");
+            }
+            default:{
+                System.out.println("invalid condition");
+            }
         }
         // will correspond to the dollar value(180)?
         //should I do this logic in asset's getValue()?no bc then it would apply to every subclass
