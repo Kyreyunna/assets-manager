@@ -9,9 +9,18 @@ public class House extends Asset{
     private int squareFoot;
     private int lotSize;
 
-    public House(String description, String dateAcquired, BigDecimal originalCost) {
+//    public House(String description, String dateAcquired, BigDecimal originalCost) {
+//        super(description, dateAcquired, originalCost);
+//    }
+
+    public House(String description, String dateAcquired, BigDecimal originalCost, String address, int condition, int squareFoot, int lotSize) {
         super(description, dateAcquired, originalCost);
+        this.address = address;
+        this.condition = condition;
+        this.squareFoot = squareFoot;
+        this.lotSize = lotSize;
     }
+
     //we want  to override asset  to get the value of a specific house
     @Override
     public BigDecimal getValue() {
@@ -76,5 +85,15 @@ public class House extends Asset{
 
     public void setLotSize(int lotSize) {
         this.lotSize = lotSize;
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "address='" + address + '\'' +
+                ", condition=" + condition +
+                ", squareFoot=" + squareFoot +
+                ", lotSize=" + lotSize +
+                '}';
     }
 }
