@@ -38,11 +38,11 @@ public class House extends Asset{
                 System.out.println("good");
             } break;
             case 3: {
-                price = new BigDecimal(90.00);
+                price = BigDecimal.valueOf((squareFoot*90)+(0.25*lotSize));
                 System.out.println("fair");
             } break;
             case 4: {
-                price = new BigDecimal(80.00);
+                price = BigDecimal.valueOf((squareFoot*80)+(0.25*lotSize));
                 System.out.println("poor");
             } break;
             default:{
