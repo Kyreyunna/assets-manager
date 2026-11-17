@@ -15,12 +15,17 @@ public class House extends Asset{
     //we want  to override asset  to get the value of a specific house
     @Override
     public BigDecimal getValue() {
+        BigDecimal price= BigDecimal.valueOf((squareFoot*condition)+(0.25*lotSize));
         //will I need a switch so that I can make it so condition 1 "excellent"
+        switch (condition){
+            case 1:
+                price= new BigDecimal(180.00);
+        }
         // will correspond to the dollar value(180)?
         //should I do this logic in asset's getValue()?
 //        setOriginalCost((squareFoot*condition)+(0.25*lotSize));
 //    setOriginalCost();
-        BigDecimal price= BigDecimal.valueOf((squareFoot*condition)+(0.25*lotSize));
+
         return price;
     }
 
