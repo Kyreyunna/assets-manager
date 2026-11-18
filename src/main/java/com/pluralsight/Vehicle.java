@@ -13,16 +13,18 @@ public class Vehicle extends Asset{
         super(description, dateAcquired, originalCost);
     }
 
-//    @Override
-//    public BigDecimal getValue() {
-//        LocalDate now = LocalDate.now();
-//       LocalDate age = LocalDate.now().minusYears(1);
-//        if(age<=3) {
-//            BigDecimal price = .03 (year)
-//        }
+    @Override
+    public BigDecimal getValue() {
 //
-//        return price;
-//    }
+//        int age = LocalDate.now().getYear();
+//        age=age-year;
+//
+//        if(age<=3) {
+//            BigDecimal price = (getOriginalCost().multiply .03 )*(year);
+//        }
+
+        return this.getOriginalCost();
+    }
 
     public String getMakeModel() {
         return makeModel;
