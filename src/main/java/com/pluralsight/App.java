@@ -22,8 +22,16 @@ public class App {
 
 //      Loop through the list and print each asset's description, date acquired, what you paid, and its value
         for (Asset asset : assets) {
+            if (asset instanceof House){
+                System.out.println(house1.getAddress());
+                System.out.println(house2.getAddress());
+            }
+            if (asset instanceof Vehicle){
+                System.out.println(vehicle1.getMakeModel());
+                System.out.println(vehicle2.getMakeModel());
+            }
             System.out.println(asset.getDescription() +asset.getDateAcquired()+asset.getOriginalCost()+ " $" + asset.getValue());
-
+//          //or Replace 'house' with pattern variable
         }
 
     }
