@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
+        //Abstract
+
+        //asset is abstract; cannot be instantiated: so you can't create a new asset bc it isn't a specific instance of the asset. The asset is the parent you can only have a new subclass of the parent not a new parent. The asset is abstract because abstract means you can't create it
+
         ArrayList<Asset> assets = new ArrayList<>();
         House house1= new House("cabin", "2004",new BigDecimal(1) , "123 Drive",2, 1800,6000);
 //        House getValue;
