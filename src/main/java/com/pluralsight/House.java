@@ -24,32 +24,34 @@ public class House extends Asset{
     //we want  to override asset  to get the value of a specific house
     @Override
     public BigDecimal getValue() {
-        BigDecimal price= BigDecimal.valueOf((squareFoot*condition)+(0.25*lotSize));
+//        BigDecimal price= BigDecimal.valueOf((squareFoot*condition)+(0.25*lotSize));
         //will I need a switch so that I can make it so condition 1 "excellent"
         // will correspond to the dollar value(180)?
         //should condition be an int or string like "good"?
-        switch (condition){
+
+//  AI suggests: Set a single rate variable in the switch, compute math once at the end
+                switch (condition){
             case 1: {
-                price =BigDecimal.valueOf((squareFoot*180)+(0.25*lotSize));
+                condition = 180;
                 System.out.println("excellent");
             } break;
             case 2: {
-                price = BigDecimal.valueOf((squareFoot*130)+(0.25*lotSize));
+               condition = 130;
                 System.out.println("good");
             } break;
             case 3: {
-                price = BigDecimal.valueOf((squareFoot*90)+(0.25*lotSize));
+                condition = 90;
                 System.out.println("fair");
             } break;
             case 4: {
-                price = BigDecimal.valueOf((squareFoot*80)+(0.25*lotSize));
+               condition = 80;
                 System.out.println("poor");
             } break;
             default:{
                 System.out.println("invalid condition");
             }
 
-        }
+        }BigDecimal price =BigDecimal.valueOf((squareFoot*condition)+(0.25*lotSize));
 
         //should I do this logic in asset's getValue()?no bc then it would apply to every subclass
 //        setOriginalCost((squareFoot*condition)+(0.25*lotSize));
